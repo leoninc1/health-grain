@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Products - Hearth & Grain Bakery</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+
+        .products-section {
+            padding: 50px 8%;
+        }
+
+        .products-section h2 {
+            text-align: center;
+            font-family: Georgia, serif;
+            font-size: 32px;
+            margin-bottom: 35px;
+        }
+
+        .products {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .product-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .product-info {
+            padding: 18px;
+        }
+
+        .product-info h3 {
+            font-family: Georgia, serif;
+            font-size: 21px;
+            margin-bottom: 8px;
+        }
+
+        .product-info p {
+            font-size: 15px;
+            margin-bottom: 12px;
+        }
+
+        .price {
+            font-size: 18px;
+            font-weight: bold;
+            color: #C97C4B;
+        }
+
+        .custom-cakes {
+            text-align: center;
+            padding: 60px 20px;
+            background-color: #C97C4B;
+        }
+
+        .custom-cakes h2 {
+            font-family: Georgia, serif;
+            margin-bottom: 15px;
+        }
+
+        .custom-cakes p {
+            margin-bottom: 15px;
+        }
+
+        @media (max-width: 900px) {
+
+            .products {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+        }
+
+        @media (max-width: 600px) {
+
+            .products {
+                grid-template-columns: 1fr;
+            }
+
+            .product-card img {
+                height: 200px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+    <nav class="navbar">
+
+        <div class="logo">
+            <img src="ChatGPT Image Aug 14, 2026, 09_35_24 AM.png"
+                 alt="Hearth & Grain Bakery">
+        </div>
+
+
+        <ul class="nav-links">
+
+            <li>
+                <a href="index.html">Home</a>
+            </li>
+
+            <li>
+                <a href="about.html">About Us</a>
+            </li>
+
+            <li>
+                <a href="products.html">Products</a>
+            </li>
+
+            <li>
+                <a href="enquiry.html">Enquire</a>
+            </li>
+
+            <li>
+                <a href="contact.html">Contact</a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+</header>
+
+
+
+<section class="page-header">
+
+    <h1>Our Products</h1>
+
+    <p>
+        Freshly baked every day with quality ingredients.
+    </p>
+
+</section>
+
+
+
+<section class="products-section">
+
+    <h2>Fresh Bakery</h2>
+
+
+    <div class="products">
+
+
+        <!-- PRODUCT 1 -->
+
+        <div class="product-card">
+
+            <img
+                src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=600&q=80"
+                alt="Fresh bread">
+
+            <div class="product-info">
+
+                <h3>Classic Sourdough</h3>
+
+                <p>
+                    Freshly baked sourdough with a crispy
+                    crust and soft centre.
+                </p>
+
+                <span class="price">R45</span>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- PRODUCT 2 -->
+
+        <div class="product-card">
+
+            <img
+                src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=600&q=80"
+                alt="Fresh croissant">
+
+            <div class="product-info">
+
+                <h3>Butter Croissant</h3>
+
+                <p>
+                    A light and flaky croissant made
+                    with rich butter.
+                </p>
+
+                <span class="price">R22</span>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- PRODUCT 3 -->
+
+        <div class="product-card">
+
+            <img
+                src="https://images.unsplash.com/photo-1607958996333-41aef7caefaa?auto=format&fit=crop&w=600&q=80"
+                alt="Blueberry muffin">
+
+            <div class="product-info">
+
+                <h3>Blueberry Muffin</h3>
+
+                <p>
+                    A soft muffin filled with sweet
+                    blueberries.
+                </p>
+
+                <span class="price">R25</span>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- PRODUCT 4 -->
+
+        <div class="product-card">
+
+            <img
+                src="https://images.unsplash.com/photo-1509365465985-25d11c17e812?auto=format&fit=crop&w=600&q=80"
+                alt="Cinnamon roll">
+
+            <div class="product-info">
+
+                <h3>Cinnamon Roll</h3>
+
+                <p>
+                    Soft baked dough with cinnamon,
+                    sugar and a sweet topping.
+                </p>
+
+                <span class="price">R28</span>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- PRODUCT 5 -->
+
+        <div class="product-card">
+
+            <img
+                src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=600&q=80"
+                alt="Chocolate cake">
+
+            <div class="product-info">
+
+                <h3>Chocolate Cake</h3>
+
+                <p>
+                    A rich chocolate cake for birthdays
+                    and special occasions.
+                </p>
+
+                <span class="price">From R350</span>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- PRODUCT 6 -->
+
+        <div class="product-card">
+
+            <img
+                src="https://images.unsplash.com/photo-1621303837174-89787a7d4729?auto=format&fit=crop&w=600&q=80"
+                alt="Carrot cake">
+
+            <div class="product-info">
+
+                <h3>Carrot Cake</h3>
+
+                <p>
+                    A soft carrot cake with a creamy
+                    topping and warm spices.
+                </p>
+
+                <span class="price">From R320</span>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<section class="custom-cakes">
+
+    <h2>Custom Celebration Cakes</h2>
+
+    <p>
+        Need a cake for a birthday, wedding,
+        anniversary or special event?
+    </p>
+
+    <a href="enquiry.html" class="button">
+        Make a Cake Enquiry
+    </a>
+
+</section>
+
+
+
+<footer>
+
+    <p>
+        &copy; 2026 Hearth & Grain Bakery
+    </p>
+
+</footer>
+
+
+<script src="js/script.js"></script>
+
+</body>
+
+</html>

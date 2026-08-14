@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Enquiry | Hearth & Grain</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<header>
+
+    <nav class="navbar">
+
+        <div class="logo">
+            Hearth & Grain
+        </div>
+
+        <ul class="nav-links">
+
+            <li><a href="index.html">Home</a></li>
+
+            <li><a href="about.html">About Us</a></li>
+
+            <li><a href="products.html">Products</a></li>
+
+            <li><a href="enquiry.html">Enquire</a></li>
+
+            <li><a href="contact.html">Contact</a></li>
+
+        </ul>
+
+    </nav>
+
+</header>
+
+
+<section class="page-header">
+
+    <h1>Make an Enquiry</h1>
+
+    <p>
+        Tell us about your custom cake or catering request.
+    </p>
+
+</section>
+
+
+<section class="form-section">
+
+    <form id="enquiryForm">
+
+        <label for="name">Full Name</label>
+
+        <input type="text"
+               id="name"
+               name="name"
+               required>
+
+
+        <label for="email">Email Address</label>
+
+        <input type="email"
+               id="email"
+               name="email"
+               required>
+
+
+        <label for="phone">Phone Number</label>
+
+        <input type="tel"
+               id="phone"
+               name="phone">
+
+
+        <label for="type">Enquiry Type</label>
+
+        <select id="type" name="type">
+
+            <option value="cake">
+                Custom Cake
+            </option>
+
+            <option value="catering">
+                Catering
+            </option>
+
+            <option value="other">
+                Other
+            </option>
+
+        </select>
+
+
+        <label for="message">Message</label>
+
+        <textarea id="message"
+                  name="message"
+                  rows="6"
+                  required></textarea>
+
+
+        <button type="submit" class="button">
+            Send Enquiry
+        </button>
+
+    </form>
+
+</section>
+
+
+<footer>
+
+    <p>&copy; 2026 Hearth & Grain Bakery</p>
+
+</footer>
+
+<script src="js/script.js"></script>
+
+</body>
+
+</html>
