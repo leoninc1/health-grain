@@ -12,11 +12,11 @@ MODERN & CLEAN CSS — v2
 :root {
     --color-bg: #fffaf5;
     --color-surface: #ffffff;
-    --color-text: #3f2a24;
-    --color-text-soft: #7a5c4f;
-    --color-primary: #a8562f;      /* warm terracotta */
-    --color-primary-dark: #7c3f1f;
-    --color-accent: #e8a15d;       /* honey gold */
+    --color-text: #2f2523;
+    --color-text-soft: #8e7b72;
+    --color-primary: #443d3a;      /* warm terracotta */
+    --color-primary-dark: #956d569f;
+    --color-accent: #61514188;       /* honey gold */
     --color-blush: #f7e3d4;        /* soft cream-pink */
     --color-border: #efd9bf;
     --shadow-soft: 0 6px 20px rgba(63, 42, 36, 0.08);
@@ -83,7 +83,7 @@ h3 {
 -------------------------------------- */
 
 header {
-    background: linear-gradient(135deg, var(--color-blush), #ffe3c2);
+    background: linear-gradient(135deg, var(--color-blush), #a19c9c);
     text-align: center;
     padding: 45px 20px;
     border-bottom: 1px solid var(--color-border);
