@@ -6,7 +6,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Products - Hearth & Grain Bakery</title>
+    <title>Bakery Products &amp; Prices | Hearth &amp; Grain Bakery</title>
+    <meta name="description" content="Browse and search our sourdough, croissants, muffins, cinnamon rolls, chocolate cake and carrot cake with prices.">
+    <meta name="theme-color" content="#443d3a">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Bakery Products &amp; Prices | Hearth &amp; Grain Bakery">
+    <meta property="og:description" content="Browse and search our sourdough, croissants, muffins, cinnamon rolls, chocolate cake and carrot cake with prices.">
 
     <link rel="stylesheet" href="css/style.css">
 
@@ -112,12 +117,16 @@
     <nav class="navbar">
 
         <div class="logo">
-            <img src="ChatGPT Image Aug 14, 2026, 09_35_24 AM.png"
-                 alt="Hearth & Grain Bakery">
+            <picture>
+                <source type="image/webp" srcset="images/logo-160.webp 160w, images/logo-320.webp 320w" sizes="80px">
+                <img src="images/logo-160.png" srcset="images/logo-160.png 160w, images/logo-320.png 320w" sizes="80px" width="160" height="160" alt="Hearth & Grain Bakery">
+            </picture>
         </div>
 
 
-        <ul class="nav-links">
+        <button type="button" class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">&#9776;</button>
+
+        <ul class="nav-links" id="navLinks">
 
             <li>
                 <a href="index.html">Home</a>
@@ -131,6 +140,7 @@
                 <a href="product.html">Products</a>
             </li>
 
+            <li><a href="gallery.html">Gallery</a></li>
             <li>
                 <a href="enquiry.html">Enquire</a>
             </li>
@@ -164,158 +174,29 @@
     <h2>Fresh Bakery</h2>
 
 
-    <div class="products">
-
-
-        <!-- PRODUCT 1 -->
-
-        <div class="product-card">
-
-            <img
-                src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=600&q=80"
-                alt="Fresh bread">
-
-            <div class="product-info">
-
-                <h3>Classic Sourdough</h3>
-
-                <p>
-                    Freshly baked sourdough with a crispy
-                    crust and soft centre.
-                </p>
-
-                <span class="price">R45</span>
-
-            </div>
-
-        </div>
-
-
-
-        <!-- PRODUCT 2 -->
-
-        <div class="product-card">
-
-            <img
-                src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=600&q=80"
-                alt="Fresh croissant">
-
-            <div class="product-info">
-
-                <h3>Butter Croissant</h3>
-
-                <p>
-                    A light and flaky croissant made
-                    with rich butter.
-                </p>
-
-                <span class="price">R22</span>
-
-            </div>
-
-        </div>
-
-
-
-        <!-- PRODUCT 3 -->
-
-        <div class="product-card">
-
-            <img
-                src="https://images.unsplash.com/photo-1607958996333-41aef7caefaa?auto=format&fit=crop&w=600&q=80"
-                alt="Blueberry muffin">
-
-            <div class="product-info">
-
-                <h3>Blueberry Muffin</h3>
-
-                <p>
-                    A soft muffin filled with sweet
-                    blueberries.
-                </p>
-
-                <span class="price">R25</span>
-
-            </div>
-
-        </div>
-
-
-
-        <!-- PRODUCT 4 -->
-
-        <div class="product-card">
-
-            <img
-                src="https://images.unsplash.com/photo-1509365465985-25d11c17e812?auto=format&fit=crop&w=600&q=80"
-                alt="Cinnamon roll">
-
-            <div class="product-info">
-
-                <h3>Cinnamon Roll</h3>
-
-                <p>
-                    Soft baked dough with cinnamon,
-                    sugar and a sweet topping.
-                </p>
-
-                <span class="price">R28</span>
-
-            </div>
-
-        </div>
-
-
-
-        <!-- PRODUCT 5 -->
-
-        <div class="product-card">
-
-            <img
-                src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=600&q=80"
-                alt="Chocolate cake">
-
-            <div class="product-info">
-
-                <h3>Chocolate Cake</h3>
-
-                <p>
-                    A rich chocolate cake for birthdays
-                    and special occasions.
-                </p>
-
-                <span class="price">From R350</span>
-
-            </div>
-
-        </div>
-
-
-
-        <!-- PRODUCT 6 -->
-
-        <div class="product-card">
-
-            <img
-                src="https://images.unsplash.com/photo-1621303837174-89787a7d4729?auto=format&fit=crop&w=600&q=80"
-                alt="Carrot cake">
-
-            <div class="product-info">
-
-                <h3>Carrot Cake</h3>
-
-                <p>
-                    A soft carrot cake with a creamy
-                    topping and warm spices.
-                </p>
-
-                <span class="price">From R320</span>
-
-            </div>
-
-        </div>
-
-
+    <div class="toolbar">
+        <label class="sr-only" for="searchBox">Search products</label>
+        <input type="search" id="searchBox" placeholder="Search products...">
+        <label class="sr-only" for="categoryFilter">Filter by category</label>
+        <select id="categoryFilter">
+            <option value="all">All categories</option>
+            <option value="bread">Bread</option>
+            <option value="pastry">Pastries</option>
+            <option value="cake">Cakes</option>
+        </select>
+        <label class="sr-only" for="sortSelect">Sort products</label>
+        <select id="sortSelect">
+            <option value="default">Sort: Featured</option>
+            <option value="price-asc">Price: low to high</option>
+            <option value="price-desc">Price: high to low</option>
+            <option value="name">Name: A to Z</option>
+        </select>
+    </div>
+
+    <p id="resultCount" aria-live="polite"></p>
+
+    <div class="products" id="productGrid">
+        <noscript><p>Please enable JavaScript to view our products.</p></noscript>
     </div>
 
 </section>

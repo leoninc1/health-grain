@@ -4,7 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>About Us | Hearth & Grain</title>
+    <title>About Us | Hearth &amp; Grain Bakery - Family-Run Local Bakery</title>
+    <meta name="description" content="Learn how Hearth &amp; Grain grew from a weekend bakery stall into a local shop baking traditional sourdough and custom cakes with quality local ingredients.">
+    <meta name="theme-color" content="#443d3a">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="About Us | Hearth &amp; Grain Bakery - Family-Run Local Bakery">
+    <meta property="og:description" content="Learn how Hearth &amp; Grain grew from a weekend bakery stall into a local shop baking traditional sourdough and custom cakes with quality local ingredients.">
 
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -15,14 +20,19 @@
     <nav class="navbar">
 
          <div class="logo">
-            <img src="ChatGPT Image Aug 14, 2026, 09_35_24 AM.png"
-                 alt="Hearth & Grain Bakery">
+            <picture>
+                <source type="image/webp" srcset="images/logo-160.webp 160w, images/logo-320.webp 320w" sizes="80px">
+                <img src="images/logo-160.png" srcset="images/logo-160.png 160w, images/logo-320.png 320w" sizes="80px" width="160" height="160" alt="Hearth & Grain Bakery">
+            </picture>
         </div>
 
-        <ul class="nav-links">
+        <button type="button" class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">&#9776;</button>
+
+        <ul class="nav-links" id="navLinks">
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About Us</a></li>
             <li><a href="product.html">Products</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
             <li><a href="enquiry.html">Enquire</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
@@ -72,6 +82,24 @@
         We want to become a trusted bakery in our local community
         while using our website to reach more customers.
     </p>
+
+</section>
+
+
+<section class="faq">
+
+    <h2>Frequently Asked Questions</h2>
+
+    <div class="accordion">
+        <button type="button" class="accordion-btn" aria-expanded="false">How far ahead should I order a custom cake?</button>
+        <div class="accordion-panel"><p>We ask for at least 5 days' notice for custom cakes, and a little longer for large or wedding cakes.</p></div>
+
+        <button type="button" class="accordion-btn" aria-expanded="false">What are your opening hours?</button>
+        <div class="accordion-panel"><p>We are open Monday to Saturday, 08:00 - 17:00, and closed on Sundays.</p></div>
+
+        <button type="button" class="accordion-btn" aria-expanded="false">Do you cater for events?</button>
+        <div class="accordion-panel"><p>Yes. Catering starts at 10 people and needs 7 days' notice. Use the enquiry form for an instant estimate.</p></div>
+    </div>
 
 </section>
 

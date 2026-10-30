@@ -8,9 +8,15 @@
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
 
-    <title>Contact | Hearth & Grain</title>
+    <title>Contact &amp; Opening Hours | Hearth &amp; Grain Bakery</title>
+    <meta name="description" content="Find Hearth &amp; Grain Bakery: phone, email, opening hours (Mon-Sat 08:00-17:00), an interactive map and a contact form.">
+    <meta name="theme-color" content="#443d3a">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Contact &amp; Opening Hours | Hearth &amp; Grain Bakery">
+    <meta property="og:description" content="Find Hearth &amp; Grain Bakery: phone, email, opening hours (Mon-Sat 08:00-17:00), an interactive map and a contact form.">
 
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css">
 
 </head>
 
@@ -21,11 +27,15 @@
     <nav class="navbar">
 
         <div class="logo">
-           <img src="ChatGPT Image Aug 14, 2026, 09_35_24 AM.png"
-                 alt="Hearth & Grain Bakery">
+           <picture>
+                <source type="image/webp" srcset="images/logo-160.webp 160w, images/logo-320.webp 320w" sizes="80px">
+                <img src="images/logo-160.png" srcset="images/logo-160.png 160w, images/logo-320.png 320w" sizes="80px" width="160" height="160" alt="Hearth & Grain Bakery">
+            </picture>
         </div>
 
-        <ul class="nav-links">
+        <button type="button" class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">&#9776;</button>
+
+        <ul class="nav-links" id="navLinks">
 
             <li><a href="index.html">Home</a></li>
 
@@ -33,6 +43,7 @@
 
             <li><a href="product.html">Products</a></li>
 
+            <li><a href="gallery.html">Gallery</a></li>
             <li><a href="enquiry.html">Enquire</a></li>
 
             <li><a href="contact.html">Contact</a></li>
@@ -47,8 +58,8 @@
 <section class="page-header">
 
     <h1>Contact Us</h1>
-    <p> CELL:076 123 4567</p>
-    <P>EMAIL:healthgrain@email.com</P>
+    <p>CELL: 076 123 4567</p>
+    <p>EMAIL: healthgrain@email.com</p>
 
 </section>
 
@@ -77,9 +88,42 @@
         Our bakery location can be found on the map below.
     </p>
 
-    <div class="map">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1823.6989740675306!2d29.44923387485197!3d-23.91095855453215!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1ec6d827a6d3019f%3A0xac207bf46b6745c8!2sRosebank%20International%20Polokwane%20Campus!5e0!3m2!1sen!2sza!4v1789656285708!5m2!1sen!2sza" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
-    </div>
+    <div id="map" class="map" role="region" aria-label="Map showing our bakery location"></div>
+
+</section>
+
+
+<section class="form-section">
+
+    <h2>Send Us a Message</h2>
+
+    <form id="contactForm" novalidate>
+
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="phone">Phone Number (optional)</label>
+        <input type="tel" id="phone" name="phone">
+
+        <label for="topic">Type of Message</label>
+        <select id="topic" name="topic">
+            <option>General question</option>
+            <option>Feedback</option>
+            <option>Order follow-up</option>
+            <option>Other</option>
+        </select>
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="6" required></textarea>
+
+        <button type="submit" class="button">Create Email</button>
+
+    </form>
+
+    <div id="contactResult" aria-live="polite"></div>
 
 </section>
 
@@ -90,6 +134,7 @@
 
 </footer>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
 <script src="js/script.js"></script>
 
 </body>

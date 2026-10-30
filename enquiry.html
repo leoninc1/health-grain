@@ -8,7 +8,12 @@
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
 
-    <title>Enquiry | Hearth & Grain</title>
+    <title>Custom Cake &amp; Catering Enquiry | Hearth &amp; Grain Bakery</title>
+    <meta name="description" content="Enquire about a custom celebration cake or catering order. Get an instant cost estimate and availability check.">
+    <meta name="theme-color" content="#443d3a">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Custom Cake &amp; Catering Enquiry | Hearth &amp; Grain Bakery">
+    <meta property="og:description" content="Enquire about a custom celebration cake or catering order. Get an instant cost estimate and availability check.">
 
     <link rel="stylesheet" href="css/style.css">
 
@@ -21,11 +26,15 @@
     <nav class="navbar">
 
         <div class="logo">
-           <img src="ChatGPT Image Aug 14, 2026, 09_35_24 AM.png"
-                 alt="Hearth & Grain Bakery">
+           <picture>
+                <source type="image/webp" srcset="images/logo-160.webp 160w, images/logo-320.webp 320w" sizes="80px">
+                <img src="images/logo-160.png" srcset="images/logo-160.png 160w, images/logo-320.png 320w" sizes="80px" width="160" height="160" alt="Hearth & Grain Bakery">
+            </picture>
         </div>
 
-        <ul class="nav-links">
+        <button type="button" class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">&#9776;</button>
+
+        <ul class="nav-links" id="navLinks">
 
             <li><a href="index.html">Home</a></li>
 
@@ -33,6 +42,7 @@
 
             <li><a href="product.html">Products</a></li>
 
+            <li><a href="gallery.html">Gallery</a></li>
             <li><a href="enquiry.html">Enquire</a></li>
 
             <li><a href="contact.html">Contact</a></li>
@@ -57,7 +67,7 @@
 
 <section class="form-section">
 
-    <form id="enquiryForm">
+    <form id="enquiryForm" action="https://formspree.io/f/YOUR_FORM_ID" method="post" novalidate>
 
         <label for="name">Full Name</label>
 
@@ -101,6 +111,16 @@
         </select>
 
 
+        <label for="quantity">Servings / Guests</label>
+
+        <input type="number" id="quantity" name="quantity" min="1" max="500" value="10">
+
+
+        <label for="date">Date Needed</label>
+
+        <input type="date" id="date" name="date">
+
+
         <label for="message">Message</label>
 
         <textarea id="message"
@@ -114,6 +134,8 @@
         </button>
 
     </form>
+
+    <div id="enquiryResult" class="result-box" aria-live="polite"></div>
 
 </section>
 
