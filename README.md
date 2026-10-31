@@ -3,7 +3,7 @@
 **Module:** Web Development (Introduction), WEDE5020
 **Student:** Khavharendwe Leon Ndou (ST10510011), Group 1
 **Repository:** https://github.com/leoninc1/health-grain
-**Live site:** 
+**Live site:** https://luminous-sfogliatella-ddf36a.netlify.app/
 
 A responsive website for Hearth & Grain Bakery, a fictional small family bakery that started as a weekend stall and now runs from one shop, known for sourdough bread and custom celebration cakes.
 
