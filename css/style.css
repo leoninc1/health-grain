@@ -485,6 +485,53 @@ header {
 }
 
 /* --------------------------------------
+9b. PRODUCTS PAGE (moved from inline <style> in product.html)
+-------------------------------------- */
+.products {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+}
+
+.product-card {
+    overflow: hidden;
+    background-color: var(--white);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-soft);
+}
+
+.product-card img {
+    display: block;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.product-info {
+    padding: 22px;
+}
+
+.product-info h3 {
+    margin-bottom: 0.3em;
+    font-size: 1.3rem;
+}
+
+.product-info p {
+    margin-bottom: 0.8em;
+    font-size: 0.97rem;
+}
+
+.price {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #9c5528;
+}
+
+.custom-cakes {
+    background: linear-gradient(135deg, #d89463, var(--terracotta));
+}
+
+/* --------------------------------------
 10. PAGE HEADERS & CONTENT PAGES
 -------------------------------------- */
 .page-header {
@@ -817,16 +864,50 @@ video {
 15. FOOTER
 -------------------------------------- */
 footer {
-    padding: 36px 5%;
-    text-align: center;
+    padding: 56px var(--gutter) 28px;
     color: var(--gold-light);
     background-color: var(--maroon-dark);
     border-top: 4px solid var(--gold);
 }
 
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr 1fr;
+    gap: 32px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid rgba(230, 201, 135, 0.25);
+}
+
+footer h3 {
+    margin-bottom: 0.7em;
+    font-size: 1.05rem;
+    color: var(--cream);
+}
+
 footer p {
-    margin: 0;
-    font-size: 0.92rem;
+    margin: 0 0 0.4em;
+    font-size: 0.95rem;
+}
+
+footer li {
+    margin-bottom: 0.4em;
+    font-size: 0.95rem;
+}
+
+footer a {
+    color: var(--gold-light);
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: var(--white);
+    text-decoration: underline;
+}
+
+.copyright {
+    margin: 24px 0 0;
+    text-align: center;
+    font-size: 0.85rem;
     letter-spacing: 0.4px;
 }
 
@@ -877,6 +958,14 @@ textarea:focus-visible {
 
 /* Tablets */
 @media (max-width: 900px) {
+    .products {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
     .gallery {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -949,7 +1038,18 @@ textarea:focus-visible {
 }
 
 /* Phones */
+@media (max-width: 600px) {
+    .products {
+        grid-template-columns: 1fr;
+    }
+}
+
 @media (max-width: 480px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
     body {
         font-size: 1rem;
     }

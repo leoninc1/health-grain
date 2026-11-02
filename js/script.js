@@ -214,6 +214,31 @@ function initContact() {
 }
 
 /* ---------- Dynamic products: load, search, filter, sort ---------- */
+/* ---------- Images: descriptive local file first, online photo as backup ---------- */
+const IMAGE_SIZES = "(max-width: 480px) 100vw, (max-width: 900px) 50vw, 33vw";
+function useLocalImage(img, localSrc, fallback, link) {
+    const swap = () => {
+        img.onerror = null;
+        img.src = fallback.src;
+        if (fallback.srcset) { img.srcset = fallback.srcset; img.sizes = IMAGE_SIZES; }
+        if (link && fallback.href) link.href = fallback.href;
+    };
+    img.onerror = swap;
+    img.src = localSrc;
+    // the file may already have failed before this code ran
+    if (img.complete && img.naturalWidth === 0 && img.getAttribute("src")) swap();
+}
+function initImageFallbacks() {
+    $$("img[data-fallback-src]").forEach(img => {
+        const link = img.closest("a");
+        useLocalImage(img, img.getAttribute("src"), {
+            src: img.dataset.fallbackSrc,
+            srcset: img.dataset.fallbackSrcset,
+            href: link ? link.dataset.fallbackHref : ""
+        }, link);
+    });
+}
+
 const PRODUCTS = [
     { name: "Classic Sourdough", category: "bread", price: 45, from: false,
       desc: "Freshly baked sourdough with a crispy crust and soft centre.",
@@ -239,9 +264,11 @@ function productCard(p) {
     const card = el("div", "", "product-card");
     const img = el("img");
     const base = p.img.replace("&w=600&q=80", "");
-    img.src = p.img;
-    img.srcset = [400, 600, 900].map(w => `${base}&w=${w}&q=80 ${w}w`).join(", ");
-    img.sizes = "(max-width: 600px) 100vw, (max-width: 900px) 50vw, 33vw";
+    const fileName = p.name.toLowerCase().replace(/\s+/g, "-") + ".jpg"; // e.g. classic-sourdough.jpg
+    useLocalImage(img, "images/products/" + fileName, {
+        src: p.img,
+        srcset: [400, 600, 900].map(w => `${base}&w=${w}&q=80 ${w}w`).join(", ")
+    });
     img.alt = p.alt; img.loading = "lazy"; img.width = 600; img.height = 400;
     const info = el("div", "", "product-info");
     info.append(el("h3", p.name), el("p", p.desc), el("span", (p.from ? "From " : "") + "R" + p.price, "price"));
@@ -363,6 +390,7 @@ function initNav() {
 
 /* ---------- Start everything ---------- */
 initNav();
+initImageFallbacks();
 initEnquiry();
 initContact();
 initProducts();
